@@ -1,0 +1,61 @@
+/* Unified responsive layout: desktop, tablet and mobile */
+body{overflow-x:hidden}
+.hero,.block{width:100%;max-width:1280px}
+.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,70px)}
+.hero>div,.hero figure,.intro>*{min-width:0}
+.hero h1{font-size:clamp(48px,4.6vw,70px);line-height:1.02;overflow-wrap:normal}
+.intro{grid-template-columns:minmax(140px,.42fr) minmax(0,1.08fr) minmax(240px,.72fr);gap:clamp(24px,3vw,42px)}
+.intro h2{font-size:clamp(44px,4.2vw,66px);line-height:1.04;letter-spacing:-.055em;overflow-wrap:normal}
+html[lang="zh-CN"] .intro h2{word-break:keep-all}
+.dark .intro{align-items:start}
+.metrics strong{font-size:clamp(48px,5vw,72px)}
+.products,.board{grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr)}
+.gallery{grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr)}
+.products img,.board>img{max-width:100%}
+
+@media(max-width:1100px){
+  .nav nav{display:none}.nav{gap:18px}.languages{margin-left:auto}
+  .hero,.block{padding:82px 28px}
+  .hero{grid-template-columns:1fr 1fr;gap:34px;min-height:auto}
+  .hero h1,html[lang="zh-CN"] .hero h1{font-size:clamp(40px,5vw,54px)}
+  .hero figure .hero-products{height:430px}
+  .intro{grid-template-columns:1fr 2fr;gap:16px 28px}
+  .intro h2{font-size:clamp(42px,5.4vw,58px);grid-column:2}
+  .intro>p:last-child{grid-column:2;max-width:680px}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .three{grid-template-columns:repeat(3,1fr)}
+  .products,.board{grid-template-columns:1fr}
+  .products>img,.board>img{height:min(58vw,560px)}
+  .product-list a,.products a{min-height:180px}
+  .board>div{min-height:480px}.board strong{margin-top:40px}
+  .dark{padding:90px 28px}.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:330px}
+}
+
+@media(max-width:760px){
+  .nav{padding:13px 18px}.nav-button{display:none}.nav .brand{font-size:0}.nav .brand b{font-size:16px}
+  .hero,.block{padding:64px 20px}
+  .hero,html[lang="zh-CN"] .hero{grid-template-columns:1fr;gap:38px}
+  .hero h1,html[lang="zh-CN"] .hero h1{font-size:clamp(38px,10vw,50px);white-space:normal;word-break:normal}
+  html[lang="zh-CN"] .hero h1 em{white-space:normal;word-break:normal}
+  .lead{font-size:16px}.actions{flex-wrap:wrap}
+  .hero figure .hero-products{height:auto;aspect-ratio:4/3}
+  .intro{grid-template-columns:1fr;gap:10px}
+  .intro h2,.intro>p:last-child{grid-column:auto}
+  .intro h2{font-size:clamp(38px,10vw,52px);margin:8px 0 18px}
+  html[lang="zh-CN"] .intro h2{word-break:normal}
+  .metrics{margin-top:38px}.metrics article{min-height:145px;padding:20px}
+  .three{grid-template-columns:1fr}.three h3{margin-top:28px}
+  .products>img,.board>img{height:auto;aspect-ratio:4/3}
+  .products a{min-height:160px;padding:22px}.products strong{font-size:22px}
+  .dark{padding:68px 20px}.gallery{grid-template-columns:1fr;grid-auto-rows:300px}.gallery .tall{grid-row:auto}
+  .board>div{min-height:auto;padding:28px}.board strong{font-size:52px;margin-top:35px}.board dl{margin-top:45px}
+  .cta{padding:90px 20px}.cta h2{font-size:clamp(42px,11vw,60px)}
+  footer{grid-template-columns:1fr;padding:42px 20px}footer p{text-align:left}
+}
+
+@media(max-width:420px){
+  .languages{font-size:11px;gap:5px}.metrics{grid-template-columns:1fr 1fr}
+  .metrics strong{font-size:42px}.metrics span{font-size:11px}
+  .hero,.block{padding-left:16px;padding-right:16px}.dark{padding-left:16px;padding-right:16px}
+  .pill{padding:12px 18px}.board dl{grid-template-columns:1fr}
+}

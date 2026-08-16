@@ -1,0 +1,3 @@
+.hero figure .hero-products{height:520px;object-position:center;filter:saturate(.9) contrast(1.02)}
+@media(max-width:850px){.hero figure .hero-products{height:420px}}
+@media(max-width:520px){.hero figure .hero-products{height:320px}}

@@ -1,0 +1,2 @@
+.languages{display:flex;align-items:center;gap:7px;font-size:12px;white-space:nowrap}.languages a{color:var(--muted)}.languages a.active{color:var(--ink);font-weight:800}.languages a:hover{color:var(--blue)}
+@media(max-width:650px){.nav-button{display:none}.languages{margin-left:auto}.nav .brand{font-size:0}.nav .brand b{font-size:16px}}

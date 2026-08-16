@@ -1,3 +1,6 @@
 .hero figure .hero-products{height:520px;object-position:center;filter:saturate(.9) contrast(1.02)}
+html[lang="zh-CN"] .hero h1{font-size:clamp(42px,4vw,64px);letter-spacing:-.055em;white-space:nowrap}
+html[lang="zh-CN"] .hero h1 em{white-space:nowrap}
 @media(max-width:850px){.hero figure .hero-products{height:420px}}
-@media(max-width:520px){.hero figure .hero-products{height:320px}}
+@media(max-width:850px){html[lang="zh-CN"] .hero h1{font-size:clamp(38px,8vw,56px)}}
+@media(max-width:520px){.hero figure .hero-products{height:320px}html[lang="zh-CN"] .hero h1{font-size:42px;white-space:normal}html[lang="zh-CN"] .hero h1 em{white-space:normal}}

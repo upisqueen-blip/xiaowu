@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>在线烧录｜森穹小悟</title>
+<meta name="description" content="为森穹小悟 ESP32-S3 墨水屏开发板选择屏幕驱动并通过浏览器在线烧录固件。">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="stylesheet" href="assets/flash.css?v=1">
+<script type="module" src="https://unpkg.com/esp-web-tools@10.0.1/dist/web/install-button.js?module"></script>
+</head>
+<body>
+<header class="nav"><a class="brand" href="index.html"><b>森</b>森穹小悟</a><a class="back" href="index.html">返回首页</a></header>
+<main>
+<section class="hero">
+<p class="eyebrow">XIAOWU WEB FLASHER · ESP32-S3</p>
+<h1>选好屏幕，<br><em>一根 USB 线完成烧录。</em></h1>
+<p>此工具仅适用于森穹小悟 ESP32-S3 主板。烧录过程在浏览器本地完成，不上传串口数据。</p>
+</section>
+<section class="flasher" aria-labelledby="driver-title">
+<div class="step-head"><span>01</span><div><h2 id="driver-title">选择屏幕驱动</h2><p>屏幕型号必须与实物一致，不要把其他屏幕固件交叉烧录。</p></div></div>
+<div class="drivers" id="driver-list">
+<label class="driver selected"><input type="radio" name="driver" value="firmware/manifest-ssd2683za-epd42.json" checked><span class="status ready">可烧录</span><strong>4.2 英寸四色屏</strong><small>SSD2683ZA · 400 × 300 · 24Pin</small><p>当前主板已验证版本，支持语音、TF 卡、相册、日历和课程表。</p></label>
+<label class="driver unavailable" aria-disabled="true"><input type="radio" name="driver" disabled><span class="status pending">驱动准备中</span><strong>7 英寸 E6 屏</strong><small>50Pin 转接板</small><p>需要完成对应面板初始化、分辨率和 LUT 后再开放，避免错误烧录。</p></label>
+<label class="driver unavailable" aria-disabled="true"><input type="radio" name="driver" disabled><span class="status pending">驱动准备中</span><strong>双 24Pin 屏</strong><small>A / B 双屏</small><p>硬件接口已预留，等待独立双屏固件通过实板验证。</p></label>
+</div>
+<div class="selected-info" id="selected-info"><span>当前选择</span><strong>4.2 英寸四色屏 · SSD2683ZA</strong></div>
+<div class="step-head connect"><span>02</span><div><h2>连接并烧录</h2><p>请使用支持数据传输的 USB 线，推荐 Chrome 或 Edge 桌面版。</p></div></div>
+<div class="install-box">
+<esp-web-install-button id="install-button" manifest="firmware/manifest-ssd2683za-epd42.json">
+<button slot="activate" class="install">连接设备并开始烧录</button>
+<span slot="unsupported">当前浏览器不支持 Web Serial，请改用 Chrome 或 Edge。</span>
+<span slot="not-allowed">串口访问被浏览器阻止，请确认页面使用 HTTPS。</span>
+</esp-web-install-button>
+<p class="privacy">首次烧录建议在弹窗中选择“清除设备”。烧录完成后断开 USB，再按一下 RESET。</p>
+</div>
+</section>
+<section class="guide"><h2>进入下载模式</h2><ol><li><b>普通连接：</b>直接连接主板 USB-C，然后点击“连接设备”。</li><li><b>无法识别时：</b>按住 BOOT（GPIO0），短按 RESET，松开 BOOT 后重新连接。</li><li><b>选择串口：</b>Windows 通常显示为 USB JTAG/serial debug unit 或 COM 设备。</li><li><b>烧录期间：</b>不要拔线、关闭页面或让电脑休眠。</li></ol><aside><strong>安全提示</strong><p>只烧录与屏幕型号匹配的官方固件。在线烧录会覆盖设备程序；TF 卡中的图片和音频不会被网页读取。</p></aside></section>
+</main>
+<footer>© 2026 森穹小悟 · ESP32-S3 在线烧录</footer>
+<script src="assets/flash.js?v=1"></script>
+</body>
+</html>

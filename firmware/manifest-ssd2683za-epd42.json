@@ -1,0 +1,12 @@
+{
+  "name": "森穹小悟 S3 · 4.2英寸四色屏 SSD2683ZA",
+  "version": "2026.08.19",
+  "new_install_prompt_erase": true,
+  "builds": [{
+    "chipFamily": "ESP32-S3",
+    "parts": [{
+      "path": "https://github.com/upisqueen-blip/xiaowu/releases/download/firmware-2026.08.19/xiaowu-ssd2683za-epd42-full.bin",
+      "offset": 0
+    }]
+  }]
+}
